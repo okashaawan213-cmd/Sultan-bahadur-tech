@@ -4,78 +4,475 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Reliable Technology | Smart Business Solutions</title>
-<meta name="description" content="Reliable Technology provides smart digital solutions for restaurants, shops, malls and businesses in Karachi, including websites, applications, ordering systems and business technology.">
+<title>Sultan Bahadur Tech | Technology. Smarter Business.</title>
+<meta name="description" content="Sultan Bahadur Tech provides websites, mobile apps, POS, online ordering, digital menus, product catalogs and business management systems for modern businesses.">
+<meta name="keywords" content="Sultan Bahadur Tech, technology company, Karachi, POS, online ordering, digital menu, business management, websites, mobile apps">
+<meta name="author" content="Sultan Bahadur Tech">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:#f6f9fc;color:#172033;line-height:1.6}
-header{background:#fff;border-bottom:1px solid #e7edf4;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000}
-.logo{font-size:24px;font-weight:800;color:#075cff}
-.logo span{color:#172033}
-nav a{margin-left:24px;text-decoration:none;color:#172033;font-weight:600}
-nav a:hover{color:#075cff}
+body{
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  background:#f7f9fc;
+  color:#142033;
+  line-height:1.6
+}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1200px;margin:auto}
 
-.hero{padding:95px 7%;text-align:center;background:linear-gradient(135deg,#eef5ff,#fff)}
-.badge{display:inline-block;background:#e7f0ff;color:#075cff;padding:8px 16px;border-radius:30px;font-weight:700;margin-bottom:20px}
-.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.05;color:#102a56;margin-bottom:22px}
-.hero h1 span{color:#075cff}
-.hero p{max-width:780px;margin:auto;color:#647084;font-size:19px}
-.buttons{margin-top:32px}
-.btn{display:inline-block;padding:14px 25px;border-radius:9px;text-decoration:none;font-weight:700;margin:6px}
-.primary{background:#075cff;color:#fff}
-.secondary{background:#fff;color:#075cff;border:1px solid #075cff}
-.primary:hover{background:#0047cc}
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #e7ebf1
+}
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-weight:900;
+  letter-spacing:.5px
+}
+.logo-box{
+  width:43px;
+  height:43px;
+  border-radius:11px;
+  background:#0b63f6;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  font-weight:900
+}
+.logo-text{line-height:1.05}
+.logo-text small{
+  display:block;
+  color:#0b63f6;
+  font-size:10px;
+  letter-spacing:2px;
+  margin-top:4px
+}
+nav{
+  display:flex;
+  align-items:center;
+  gap:25px
+}
+nav a{
+  font-size:14px;
+  font-weight:700;
+  color:#526074
+}
+nav a:hover{color:#0b63f6}
+.nav-btn{
+  background:#0b63f6;
+  color:#fff!important;
+  padding:11px 17px;
+  border-radius:8px
+}
 
-section{padding:75px 7%}
-.title{text-align:center;margin-bottom:45px}
-.title h2{font-size:38px;color:#102a56;margin-bottom:10px}
-.title p{color:#687386}
+.hero{
+  padding:105px 0 90px;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(11,99,246,.12),transparent 30%),
+    linear-gradient(135deg,#f8fbff,#fff)
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:60px
+}
+.eyebrow{
+  display:inline-block;
+  color:#0b63f6;
+  background:#eaf2ff;
+  padding:7px 13px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1px;
+  margin-bottom:20px
+}
+.hero h1{
+  font-size:clamp(43px,6vw,72px);
+  line-height:1.03;
+  letter-spacing:-2px;
+  color:#10213b;
+  margin-bottom:23px
+}
+.hero h1 span{color:#0b63f6}
+.hero p{
+  max-width:650px;
+  color:#657186;
+  font-size:19px
+}
+.hero-buttons{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:9px;
+  font-weight:800;
+  font-size:14px;
+  border:1px solid transparent
+}
+.btn-primary{background:#0b63f6;color:#fff}
+.btn-primary:hover{background:#0753d0}
+.btn-outline{border-color:#cfd8e5;color:#17304f;background:#fff}
+.btn-outline:hover{border-color:#0b63f6;color:#0b63f6}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-.card{background:#fff;border:1px solid #e3e9f1;border-radius:16px;padding:30px;box-shadow:0 8px 25px rgba(20,40,80,.06);transition:.3s}
-.card:hover{transform:translateY(-6px);box-shadow:0 15px 35px rgba(20,40,80,.12)}
-.icon{font-size:38px;margin-bottom:14px}
-.card h3{color:#102a56;margin-bottom:10px}
-.card p{color:#687386}
+.hero-card{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 20px 55px rgba(20,45,85,.1)
+}
+.hero-card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px
+}
+.status{
+  color:#16824b;
+  background:#e9f8f0;
+  padding:6px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:800
+}
+.dashboard-item{
+  padding:16px;
+  background:#f7f9fc;
+  border-radius:12px;
+  margin-top:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+.dashboard-item strong{display:block}
+.dashboard-item small{color:#7a8799}
+.tag{
+  font-size:11px;
+  font-weight:800;
+  color:#0b63f6;
+  background:#eaf2ff;
+  padding:6px 9px;
+  border-radius:20px
+}
 
-.platform{background:#fff}
-.platform-box{background:#102a56;color:#fff;border-radius:22px;padding:55px 7%;text-align:center}
-.platform-box h2{font-size:38px;margin-bottom:15px}
-.platform-box p{color:#d8e3f5;max-width:760px;margin:auto}
+section{padding:85px 0}
+.section-head{
+  max-width:700px;
+  margin:0 auto 45px;
+  text-align:center
+}
+.section-head .label{
+  color:#0b63f6;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.5px
+}
+.section-head h2{
+  font-size:40px;
+  line-height:1.15;
+  color:#10213b;
+  margin:9px 0 12px
+}
+.section-head p{color:#6b7789}
 
-.feature-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:35px;text-align:left}
-.feature{background:rgba(255,255,255,.09);padding:22px;border-radius:12px}
-.feature strong{display:block;margin-bottom:6px}
-.feature span{color:#d8e3f5;font-size:14px}
+.business-strip{
+  background:#10213b;
+  color:#fff;
+  padding:25px 0
+}
+.business-types{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+  text-align:center
+}
+.business-types div{
+  padding:12px;
+  border-right:1px solid rgba(255,255,255,.12);
+  font-weight:700;
+  color:#e5ebf5
+}
 
-.pricing{background:#f6f9fc}
-.price-card{position:relative;text-align:center}
-.price-card h3{font-size:24px}
-.price{font-size:40px;font-weight:800;color:#075cff;margin:18px 0 5px}
-.price small{font-size:15px;color:#687386}
-.price-card ul{list-style:none;text-align:left;margin:22px 0}
-.price-card li{padding:9px 0;border-bottom:1px solid #edf0f5;color:#596579}
-.price-card li::before{content:"✓ ";color:#075cff;font-weight:bold}
-.popular{border:2px solid #075cff}
-.popular-label{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#075cff;color:#fff;padding:5px 16px;border-radius:20px;font-size:13px;font-weight:700}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center
+}
+.about-box{
+  background:#fff;
+  padding:35px;
+  border-radius:18px;
+  border:1px solid #e3e9f0
+}
+.about-box h3{font-size:26px;color:#10213b;margin-bottom:12px}
+.about-box p{color:#667286;margin-bottom:15px}
+.about-points{display:grid;gap:13px;margin-top:22px}
+.point{
+  display:flex;
+  gap:12px;
+  align-items:flex-start
+}
+.point-icon{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#eaf2ff;
+  color:#0b63f6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  font-weight:900
+}
+.point strong{display:block;color:#23334b}
+.point span{color:#69768a;font-size:14px}
 
-.business{background:#fff}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px
+}
+.service{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:16px;
+  padding:28px;
+  transition:.25s
+}
+.service:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(20,45,85,.09)
+}
+.service-icon{
+  font-size:29px;
+  margin-bottom:15px
+}
+.service h3{font-size:19px;color:#10213b;margin-bottom:8px}
+.service p{font-size:14px;color:#6b7789}
 
-.contact{background:#102a56;color:#fff;text-align:center}
+.work{
+  background:#fff
+}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px
+}
+.step{
+  border:1px solid #e3e9f0;
+  border-radius:16px;
+  padding:27px;
+  background:#fafcff
+}
+.step-number{
+  color:#0b63f6;
+  font-size:13px;
+  font-weight:900;
+  margin-bottom:15px
+}
+.step h3{margin-bottom:8px;color:#10213b}
+.step p{font-size:14px;color:#6b7789}
+
+.pricing{
+  background:#f1f5fa
+}
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+.price-card{
+  background:#fff;
+  border:1px solid #dfe6ef;
+  border-radius:18px;
+  padding:32px;
+  position:relative
+}
+.price-card.featured{
+  border:2px solid #0b63f6;
+  transform:translateY(-8px)
+}
+.popular{
+  position:absolute;
+  top:-14px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#0b63f6;
+  color:#fff;
+  padding:5px 15px;
+  border-radius:20px;
+  font-size:11px;
+  font-weight:900
+}
+.price-card h3{font-size:22px;color:#10213b}
+.price{
+  font-size:39px;
+  font-weight:900;
+  color:#0b63f6;
+  margin:15px 0 2px
+}
+.period{color:#7b8798;font-size:13px}
+.price-card ul{
+  list-style:none;
+  margin:23px 0
+}
+.price-card li{
+  padding:8px 0;
+  border-bottom:1px solid #edf0f4;
+  font-size:14px;
+  color:#5e6b7e
+}
+.price-card li::before{
+  content:"✓";
+  color:#0b63f6;
+  font-weight:900;
+  margin-right:9px
+}
+
+.register{
+  background:#fff
+}
+.register-box{
+  background:#10213b;
+  color:#fff;
+  border-radius:22px;
+  padding:45px
+}
+.register-box h2{font-size:36px;margin-bottom:10px}
+.register-box>p{color:#d6dfec;margin-bottom:30px}
+.form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px
+}
+.form input,.form select,.form textarea{
+  width:100%;
+  border:1px solid #d8e0eb;
+  border-radius:8px;
+  padding:13px;
+  outline:none;
+  font-size:14px;
+  background:#fff;
+  color:#172033
+}
+.form textarea{
+  min-height:120px;
+  resize:vertical;
+  grid-column:1/-1
+}
+.form .full{grid-column:1/-1}
+.checkbox-title{
+  grid-column:1/-1;
+  font-size:13px;
+  font-weight:800;
+  color:#dfe7f2;
+  margin-top:5px
+}
+.checks{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px
+}
+.check{
+  background:rgba(255,255,255,.07);
+  border-radius:8px;
+  padding:10px;
+  font-size:13px;
+  color:#dce5f1
+}
+.check input{width:auto;margin-right:7px}
+
+.login-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px
+}
+.login-card{
+  background:#fff;
+  border:1px solid #e1e7ef;
+  border-radius:16px;
+  padding:30px
+}
+.login-card h3{font-size:22px;color:#10213b;margin-bottom:9px}
+.login-card p{color:#69768a;font-size:14px;margin-bottom:20px}
+
+.contact{
+  background:#10213b;
+  color:#fff;
+  text-align:center
+}
 .contact h2{font-size:40px;margin-bottom:12px}
-.contact p{color:#d8e3f5}
-.contact-info{margin-top:25px;font-size:18px}
-.contact-info a{color:#fff;text-decoration:none}
+.contact p{color:#d7e0ed}
+.contact-buttons{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap
+}
+.contact .btn-outline{
+  background:transparent;
+  border-color:#53647c;
+  color:#fff
+}
+.contact-info{
+  margin-top:28px;
+  color:#d7e0ed
+}
+.contact-info a{color:#fff;font-weight:700}
 
-footer{background:#07152b;color:#b9c5d8;text-align:center;padding:25px;font-size:14px}
+footer{
+  background:#071426;
+  color:#aeb9c9;
+  padding:28px 0;
+  text-align:center;
+  font-size:13px
+}
+.footer-logo{
+  font-weight:900;
+  color:#fff;
+  margin-bottom:5px
+}
 
-@media(max-width:700px){
-header{flex-direction:column;gap:14px}
-nav a{margin:0 7px;font-size:13px}
-.hero{padding:70px 6%}
-section{padding:55px 6%}
+@media(max-width:900px){
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:1fr}
+  .price-card.featured{transform:none}
+  .business-types{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:650px){
+  nav{display:none}
+  .hero{padding:70px 0}
+  section{padding:65px 0}
+  .services-grid,.steps,.login-grid{grid-template-columns:1fr}
+  .business-types{grid-template-columns:1fr 1fr}
+  .form{grid-template-columns:1fr}
+  .form textarea,.form .full,.checkbox-title,.checks{grid-column:1}
+  .checks{grid-template-columns:1fr}
+  .register-box{padding:28px 20px}
+  .section-head h2{font-size:31px}
+  .contact h2{font-size:31px}
 }
 </style>
 </head>
@@ -83,257 +480,370 @@ section{padding:55px 6%}
 <body>
 
 <header>
-  <div class="logo">RELIABLE <span>TECHNOLOGY</span></div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#platform">Platform</a>
-    <a href="#pricing">Subscriptions</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="container nav">
+
+    <a href="#home" class="logo">
+      <div class="logo-box">SB</div>
+      <div class="logo-text">
+        SULTAN BAHADUR
+        <small>TECH</small>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Subscriptions</a>
+      <a href="#register" class="nav-btn">Register</a>
+      <a href="#contact">Contact</a>
+      <a href="#dashboard">My Dashboard</a>
+    </nav>
+
+  </div>
 </header>
 
+<main>
+
 <section class="hero" id="home">
-  <div class="badge">Karachi • Technology Solutions</div>
+  <div class="container hero-grid">
 
-  <h1>Reliable Technology<br><span>For Modern Businesses</span></h1>
+    <div>
+      <div class="eyebrow">TECHNOLOGY & DIGITAL SOLUTIONS</div>
 
-  <p>
-    We build reliable digital solutions that help restaurants, shops,
-    malls and businesses manage their services, customers and online operations.
-  </p>
+      <h1>
+        Technology.<br>
+        <span>Smarter Business.</span>
+      </h1>
 
-  <div class="buttons">
-    <a href="#services" class="btn primary">Explore Solutions</a>
-    <a href="#pricing" class="btn secondary">View Plans</a>
+      <p>
+        Websites, apps, POS, online ordering and management systems —
+        register your business and get your own digital menu or catalog,
+        ready for customers.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#register" class="btn btn-primary">Register Your Business</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+
+      <div class="hero-card-top">
+        <strong>Business Platform</strong>
+        <span class="status">● LIVE</span>
+      </div>
+
+      <div class="dashboard-item">
+        <div>
+          <strong>Pizza Palace</strong>
+          <small>Pizza Restaurant</small>
+        </div>
+        <span class="tag">SBT-K7M2QX</span>
+      </div>
+
+      <div class="dashboard-item">
+        <div>
+          <strong>Royal Biryani</strong>
+          <small>Biryani Restaurant</small>
+        </div>
+        <span class="tag">SBT-P4N8TZ</span>
+      </div>
+
+      <div class="dashboard-item">
+        <div>
+          <strong>City Mart</strong>
+          <small>Retail Store</small>
+        </div>
+        <span class="tag">SBT-W3D9HB</span>
+      </div>
+
+      <div style="margin-top:20px;color:#687386;font-size:13px">
+        ✓ Private owner dashboards &nbsp;&nbsp; ✓ Live menus
+      </div>
+
+    </div>
+
   </div>
 </section>
 
-<section id="services">
-  <div class="title">
-    <h2>Our Technology Services</h2>
-    <p>Reliable digital solutions built around your business.</p>
+<div class="business-strip">
+  <div class="container business-types">
+    <div>Restaurants</div>
+    <div>Cafes</div>
+    <div>Bakeries</div>
+    <div>Retail Stores</div>
+    <div>Shopping Malls</div>
   </div>
+</div>
 
-  <div class="grid">
+<section id="about">
+  <div class="container about-grid">
 
-    <div class="card">
-      <div class="icon">💻</div>
-      <h3>Web Development</h3>
-      <p>Professional websites and web platforms for businesses and organizations.</p>
+    <div>
+      <div class="section-head" style="text-align:left;margin:0 0 25px">
+        <div class="label">ABOUT US</div>
+        <h2>Reliable technology for modern businesses</h2>
+      </div>
+
+      <p style="color:#667286;font-size:17px">
+        <strong>SULTAN BAHADUR TECH</strong> is a technology and digital
+        solutions company. We design and deliver websites, mobile apps,
+        business management systems, POS and online ordering that help
+        businesses sell more and operate smarter.
+      </p>
     </div>
 
-    <div class="card">
-      <div class="icon">📱</div>
-      <h3>Mobile Applications</h3>
-      <p>Modern mobile solutions designed around real customer and business needs.</p>
-    </div>
+    <div class="about-box">
 
-    <div class="card">
-      <div class="icon">⚙️</div>
-      <h3>Business Automation</h3>
-      <p>Digital systems that simplify business operations and improve efficiency.</p>
-    </div>
+      <div class="about-points">
 
-    <div class="card">
-      <div class="icon">🤖</div>
-      <h3>AI & Smart Solutions</h3>
-      <p>Smart technology features that help businesses deliver better digital experiences.</p>
-    </div>
+        <div class="point">
+          <div class="point-icon">✓</div>
+          <div>
+            <strong>Built for local business</strong>
+            <span>From a single cafe to a shopping mall, our systems adapt to how your business really works.</span>
+          </div>
+        </div>
 
-    <div class="card">
-      <div class="icon">☁️</div>
-      <h3>Cloud Solutions</h3>
-      <p>Reliable online systems designed for scalable business operations.</p>
-    </div>
+        <div class="point">
+          <div class="point-icon">✓</div>
+          <div>
+            <strong>Your own digital presence</strong>
+            <span>Each business gets a separate, branded menu or catalog — never mixed with anyone else.</span>
+          </div>
+        </div>
 
-    <div class="card">
-      <div class="icon">🔐</div>
-      <h3>Digital Security</h3>
-      <p>Technology-focused solutions for safer and more dependable digital operations.</p>
-    </div>
+        <div class="point">
+          <div class="point-icon">✓</div>
+          <div>
+            <strong>Secure by design</strong>
+            <span>Owners only manage their own data. Private details stay behind login.</span>
+          </div>
+        </div>
 
+      </div>
+
+    </div>
   </div>
 </section>
 
-<section class="platform" id="platform">
-  <div class="platform-box">
+<section id="services" style="background:#fff">
+  <div class="container">
 
-    <h2>One Platform. Multiple Businesses.</h2>
+    <div class="section-head">
+      <div class="label">SERVICES</div>
+      <h2>Everything your business needs to go digital</h2>
+      <p>From your first website to complete business management technology.</p>
+    </div>
 
-    <p>
-      Our technology platform can connect customers with restaurants,
-      shops, malls and other businesses through one convenient digital experience.
-    </p>
+    <div class="services-grid">
 
-    <div class="feature-list">
-
-      <div class="feature">
-        <strong>🍽️ Restaurants</strong>
-        <span>Select restaurants and browse complete menus.</span>
+      <div class="service">
+        <div class="service-icon">🌐</div>
+        <h3>Website Development</h3>
+        <p>Fast, modern websites that turn visitors into customers.</p>
       </div>
 
-      <div class="feature">
-        <strong>🍕 Food Ordering</strong>
-        <span>Pizza, biryani, burgers, BBQ, Chinese, desserts and more.</span>
+      <div class="service">
+        <div class="service-icon">📱</div>
+        <h3>Mobile App Development</h3>
+        <p>iOS and Android apps built around your business.</p>
       </div>
 
-      <div class="feature">
-        <strong>🏬 Shops</strong>
-        <span>Discover products and services from participating businesses.</span>
+      <div class="service">
+        <div class="service-icon">📊</div>
+        <h3>Business Management Systems</h3>
+        <p>One place to run staff, sales, branches and reports.</p>
       </div>
 
-      <div class="feature">
-        <strong>🏢 Malls</strong>
-        <span>Connect customers with stores, restaurants and services.</span>
+      <div class="service">
+        <div class="service-icon">💳</div>
+        <h3>POS Solutions</h3>
+        <p>Billing and checkout systems for counters and branches.</p>
       </div>
 
-      <div class="feature">
-        <strong>📦 Orders</strong>
-        <span>Organize customer orders through a digital system.</span>
+      <div class="service">
+        <div class="service-icon">🛒</div>
+        <h3>Online Ordering</h3>
+        <p>Let customers order directly from your own storefront.</p>
       </div>
 
-      <div class="feature">
-        <strong>📊 Business Management</strong>
-        <span>Technology designed to support growing businesses.</span>
+      <div class="service">
+        <div class="service-icon">🍽️</div>
+        <h3>Digital Menu</h3>
+        <p>Always up-to-date menus with sizes, add-ons and prices.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">📦</div>
+        <h3>Product Catalog</h3>
+        <p>Organised catalogs with variants, images and live stock.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">🧩</div>
+        <h3>Custom Software</h3>
+        <p>Software engineered exactly to your workflow.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">⚙️</div>
+        <h3>Business Automation</h3>
+        <p>Remove repetitive work with smart automated processes.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">📣</div>
+        <h3>Digital Marketing</h3>
+        <p>Grow your reach with data-driven online campaigns.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">💡</div>
+        <h3>Technology Consulting</h3>
+        <p>Clear, practical guidance for your technology roadmap.</p>
       </div>
 
     </div>
+  </div>
+</section>
 
+<section class="work" id="how">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="label">HOW IT WORKS</div>
+      <h2>Live in four simple steps</h2>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Register</h3>
+        <p>Create an account and register your business with its type and details.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Get your Client ID</h3>
+        <p>Receive a unique Business ID and a menu/catalog set up for your business type.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Manage your menu</h3>
+        <p>Add categories, products, sizes, prices, images and stock from your private dashboard.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Serve customers</h3>
+        <p>Share your storefront link so customers can browse and order.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <section class="pricing" id="pricing">
+  <div class="container">
 
-  <div class="title">
-    <h2>Subscription Plans</h2>
-    <p>Choose the plan that fits your business.</p>
-  </div>
-
-  <div class="grid">
-
-    <div class="card price-card">
-      <h3>Monthly</h3>
-      <div class="price">Rs. 10,000</div>
-      <small>per month</small>
-
-      <ul>
-        <li>Digital business platform</li>
-        <li>Restaurant & shop solutions</li>
-        <li>Customer ordering system</li>
-        <li>Business support</li>
-      </ul>
-
-      <a href="#contact" class="btn primary">Get Started</a>
+    <div class="section-head">
+      <div class="label">SUBSCRIPTIONS</div>
+      <h2>Simple plans for your business</h2>
+      <p>Choose the subscription period that works best for you.</p>
     </div>
 
-    <div class="card price-card popular">
-      <div class="popular-label">POPULAR</div>
+    <div class="pricing-grid">
 
-      <h3>6 Months</h3>
-      <div class="price">Rs. 35,000</div>
-      <small>6-month subscription</small>
+      <div class="price-card">
+        <h3>Monthly</h3>
+        <div class="price">Rs. 10,000</div>
+        <div class="period">per month</div>
 
-      <ul>
-        <li>All platform features</li>
-        <li>Restaurant & retail solutions</li>
-        <li>Ordering functionality</li>
-        <li>Business technology support</li>
-        <li>6-month subscription</li>
-      </ul>
+        <ul>
+          <li>Business digital presence</li>
+          <li>Digital menu or catalog</li>
+          <li>Online ordering</li>
+          <li>Business dashboard</li>
+          <li>Technology support</li>
+        </ul>
 
-      <a href="#contact" class="btn primary">Choose Plan</a>
+        <a href="#register" class="btn btn-primary">Choose Monthly</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="popular">POPULAR</div>
+        <h3>6 Months</h3>
+        <div class="price">Rs. 35,000</div>
+        <div class="period">6-month subscription</div>
+
+        <ul>
+          <li>Business digital presence</li>
+          <li>Digital menu or catalog</li>
+          <li>Online ordering</li>
+          <li>Business dashboard</li>
+          <li>Technology support</li>
+          <li>6-month subscription</li>
+        </ul>
+
+        <a href="#register" class="btn btn-primary">Choose 6 Months</a>
+      </div>
+
+      <div class="price-card">
+        <h3>12 Months</h3>
+        <div class="price">Rs. 65,000</div>
+        <div class="period">12-month subscription</div>
+
+        <ul>
+          <li>Business digital presence</li>
+          <li>Digital menu or catalog</li>
+          <li>Online ordering</li>
+          <li>Business dashboard</li>
+          <li>Technology support</li>
+          <li>12-month subscription</li>
+        </ul>
+
+        <a href="#register" class="btn btn-primary">Choose 12 Months</a>
+      </div>
+
     </div>
-
-    <div class="card price-card">
-      <h3>12 Months</h3>
-      <div class="price">Rs. 65,000</div>
-      <small>12-month subscription</small>
-
-      <ul>
-        <li>All platform features</li>
-        <li>Restaurant & retail solutions</li>
-        <li>Ordering functionality</li>
-        <li>Business technology support</li>
-        <li>12-month subscription</li>
-      </ul>
-
-      <a href="#contact" class="btn primary">Choose Plan</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="business">
-  <div class="title">
-    <h2>Built For Different Businesses</h2>
-    <p>Technology that can adapt to different industries.</p>
-  </div>
-
-  <div class="grid">
-
-    <div class="card">
-      <div class="icon">🍽️</div>
-      <h3>Restaurants</h3>
-      <p>Digital menus, food categories, customer ordering and restaurant solutions.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🛍️</div>
-      <h3>Retail & Shops</h3>
-      <p>Digital product discovery and customer-focused business solutions.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🏢</div>
-      <h3>Malls</h3>
-      <p>Digital solutions for stores, restaurants, customers and mall services.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🚀</div>
-      <h3>Startups</h3>
-      <p>Technology solutions for new businesses and growing companies.</p>
-    </div>
-
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="register" id="register">
+  <div class="container">
 
-  <h2>Let's Build With Reliable Technology</h2>
+    <div class="section-head">
+      <div class="label">BUSINESS REGISTRATION</div>
+      <h2>Register your business</h2>
+      <p>Restaurants, cafes, bakeries, shops, malls and more — get your own Client ID and digital presence.</p>
+    </div>
 
-  <p>
-    Have a business idea or want to bring your business online?
-    Contact our team today.
-  </p>
+    <div class="register-box">
 
-  <div class="buttons">
-    <a class="btn primary" href="tel:0316261250">Call Us</a>
+      <form class="form" onsubmit="registerBusiness(event)">
 
-    <a class="btn secondary"
-       href="https://wa.me/92316261250"
-       target="_blank">
-       WhatsApp
-    </a>
+        <input id="businessName" type="text" placeholder="Business Name *" required>
+        <input id="ownerName" type="text" placeholder="Owner / Contact Person *" required>
 
-    <a class="btn secondary"
-       href="mailto:awan27.2009@gmail.com">
-       Email Us
-    </a>
-  </div>
+        <input id="phone" type="tel" placeholder="Phone *" required>
+        <input id="email" type="email" placeholder="Email *" required>
 
-  <div class="contact-info">
-    📞 <a href="tel:0316261250">0316261250</a>
-    <br><br>
-    ✉️ <a href="mailto:awan27.2009@gmail.com">awan27.2009@gmail.com</a>
-  </div>
+        <select id="businessType" required>
+          <option value="">Select Business Type *</option>
+          <option>Restaurant</option>
+          <option>Cafe</option>
+          <option>Bakery</option>
+          <option>Retail Store</option>
+          <option>Shopping Mall</option>
+          <option>Other</option>
+        </select>
 
-</section>
+        <input id="branches" type="number" min="1" value="1" placeholder="Number of Branches">
 
-<footer>
-  © 2026 Reliable Technology. All Rights Reserved.
-</footer>
-
-</body>
-    </html>
+        <input id="address" class="full" type="text" placeholder="Address *" required>
+        <input id="city" class="full" type="text
