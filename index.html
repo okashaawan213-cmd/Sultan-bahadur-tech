@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -903,4 +903,738 @@ footer{
                     <li>Digital business setup</li>
                     <li>Business dashboard</li>
                     <li>Digital menu/catalog</li>
-               
+                </ul>
+
+                <button class="plan-btn" onclick="openCheckout('Monthly','0','Rs. 10,000/month')">
+                    Select Monthly
+                </button>
+            </div>
+
+            <div class="price-card featured">
+                <div class="popular">POPULAR</div>
+
+                <h3>6 Months</h3>
+                <div class="price">Rs. 35,000</div>
+                <div class="price-note">&nbsp;</div>
+
+                <ul>
+                    <li>6-month subscription</li>
+                    <li>Digital business setup</li>
+                    <li>Business dashboard</li>
+                    <li>Digital menu/catalog</li>
+                    <li>Business management tools</li>
+                </ul>
+
+                <button class="plan-btn" onclick="openCheckout('6 Months','35000','Rs. 35,000')">
+                    Select 6 Months
+                </button>
+            </div>
+
+            <div class="price-card">
+                <h3>12 Months</h3>
+                <div class="price">Rs. 65,000</div>
+                <div class="price-note">&nbsp;</div>
+
+                <ul>
+                    <li>12-month subscription</li>
+                    <li>Digital business setup</li>
+                    <li>Business dashboard</li>
+                    <li>Digital menu/catalog</li>
+                    <li>Business management tools</li>
+                </ul>
+
+                <button class="plan-btn" onclick="openCheckout('12 Months','65000','Rs. 65,000')">
+                    Select 12 Months
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="admin-section" id="admin">
+    <div class="container">
+
+        <div class="section-head">
+            <div class="eyebrow">Dashboard</div>
+            <h2>Business Subscription Management</h2>
+            <p>
+                Registered businesses can be reviewed and their subscription
+                status can be activated after payment verification.
+            </p>
+        </div>
+
+        <div class="admin-box">
+            <div class="admin-title">
+                <div>
+                    <h3>Registered Businesses</h3>
+                    <div class="admin-note">
+                        Payment status and selected subscription plan.
+                    </div>
+                </div>
+
+                <button class="secondary-btn" onclick="refreshClients()">
+                    Refresh
+                </button>
+            </div>
+
+            <div id="clientList" class="client-list"></div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="contact-box">
+
+            <div>
+                <h2>Ready to make your business smarter?</h2>
+                <p>Contact SULTAN BAHADUR TECH today.</p>
+            </div>
+
+            <div class="contact-actions">
+                <a class="blue" href="https://wa.me/923452543524" target="_blank">
+                    WhatsApp
+                </a>
+                <a href="mailto:awan27.2009@gmail.com">
+                    Email Us
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container footer-inner">
+        <div>
+            <strong>SULTAN BAHADUR TECH</strong><br>
+            Technology. Smarter Business.
+        </div>
+
+        <div>
+            © 2026 SULTAN BAHADUR TECH. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+
+<!-- CHECKOUT MODAL -->
+<div class="modal" id="checkoutModal">
+
+    <div class="modal-box">
+
+        <button class="close" onclick="closeCheckout()">×</button>
+
+        <!-- STEP 1 -->
+        <div id="stepOne">
+
+            <h2>Register Your Business</h2>
+
+            <p class="modal-sub">
+                Complete your business details before making the Easypaisa payment.
+            </p>
+
+            <div class="selected-plan">
+                <strong id="selectedPlanName">Monthly</strong>
+                <span id="selectedPlanPrice">Rs. 0 — First Month FREE</span>
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Business Name</label>
+                    <input id="businessName" type="text" placeholder="e.g. Mia Khan">
+                </div>
+
+                <div class="form-group">
+                    <label>Owner / Contact Person</label>
+                    <input id="ownerName" type="text" placeholder="Full name">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input id="phone" type="tel" placeholder="03XXXXXXXXX">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input id="email" type="email" placeholder="business@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Business Type</label>
+                    <select id="businessType">
+                        <option value="">Select business type</option>
+                        <option>Restaurant</option>
+                        <option>Cafe</option>
+                        <option>Bakery</option>
+                        <option>Retail Store</option>
+                        <option>Shopping Mall</option>
+                        <option>Clothing Store</option>
+                        <option>Salon</option>
+                        <option>Pharmacy</option>
+                        <option>Online Business</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>City</label>
+                    <input id="city" type="text" placeholder="City">
+                </div>
+
+                <div class="form-group full">
+                    <label>Business Address</label>
+                    <input id="address" type="text" placeholder="Complete business address">
+                </div>
+
+            </div>
+
+            <button class="verify-btn" onclick="verifyCustomer()">
+                Verify & Continue
+            </button>
+
+            <div class="notice">
+                Your information will be used for your business subscription record.
+            </div>
+
+        </div>
+
+
+        <!-- STEP 2 -->
+        <div id="stepTwo" class="hidden">
+
+            <h2>Payment Method</h2>
+
+            <p class="modal-sub">
+                Verification complete. Pay your selected subscription through Easypaisa.
+            </p>
+
+            <div class="selected-plan">
+                <strong id="paymentPlanName">Monthly</strong>
+                <span id="paymentPlanAmount">Rs. 0</span>
+            </div>
+
+            <div class="payment-box">
+
+                <div class="payment-method">
+
+                    <div class="ep-title">
+                        <div class="ep-logo">EP</div>
+
+                        <div>
+                            <strong>Easypaisa</strong><br>
+                            <small>Mobile payment</small>
+                        </div>
+                    </div>
+
+                    <div>
+                        Send payment to:
+                    </div>
+
+                    <div class="ep-number">
+                        03452543524
+                    </div>
+
+                    <strong>
+                        Muhammad Shiraz Khan
+                    </strong>
+
+                    <div class="payment-instructions">
+
+                        <strong>How to Pay</strong>
+
+                        <ol>
+                            <li>Open your Easypaisa app.</li>
+                            <li>Select Send Money / Mobile Account.</li>
+                            <li>Enter the number <strong>03452543524</strong>.</li>
+                            <li>Confirm the account name: <strong>Muhammad Shiraz Khan</strong>.</li>
+                            <li>Send the exact amount shown above.</li>
+                            <li>Copy your Easypaisa transaction ID.</li>
+                        </ol>
+
+                    </div>
+
+                    <div class="transaction">
+
+                        <label>Easypaisa Transaction ID</label>
+
+                        <input
+                            id="transactionId"
+                            type="text"
+                            placeholder="Enter transaction ID after payment"
+                        >
+
+                    </div>
+
+                    <button class="submit-payment" onclick="submitPayment()">
+                        Submit Payment for Verification
+                    </button>
+
+                    <div class="notice">
+                        Your subscription will remain pending until the payment is manually verified.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUCCESS / PENDING -->
+        <div id="stepThree" class="hidden">
+
+            <div class="success">
+
+                <div class="success-icon">✓</div>
+
+                <h2>Payment Submitted</h2>
+
+                <p class="modal-sub">
+                    Your business registration and payment details have been received.
+                </p>
+
+                <div class="client-id">
+                    Client ID: <span id="generatedClientId"></span>
+                </div>
+
+                <p id="pendingMessage" style="font-size:14px;color:#65748a">
+                    Your subscription is currently <strong>Pending Verification</strong>.
+                    Once your Easypaisa payment is verified, your selected subscription
+                    will be activated.
+                </p>
+
+                <br>
+
+                <button class="primary-btn" onclick="closeCheckout();refreshClients()">
+                    Done
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let selectedPlan = "";
+let selectedAmount = "";
+let selectedBilling = "";
+
+
+/* OPEN CHECKOUT */
+function openCheckout(plan, amount, billing){
+
+    selectedPlan = plan;
+    selectedAmount = amount;
+    selectedBilling = billing;
+
+    document.getElementById("checkoutModal").classList.add("show");
+
+    document.getElementById("stepOne").classList.remove("hidden");
+    document.getElementById("stepTwo").classList.add("hidden");
+    document.getElementById("stepThree").classList.add("hidden");
+
+    document.getElementById("selectedPlanName").textContent = plan;
+
+    if(plan === "Monthly"){
+        document.getElementById("selectedPlanPrice").textContent =
+            "Rs. 0 — First Month FREE, then Rs. 10,000/month";
+    }else{
+        document.getElementById("selectedPlanPrice").textContent =
+            "Rs. " + Number(amount).toLocaleString();
+    }
+}
+
+
+/* CLOSE CHECKOUT */
+function closeCheckout(){
+    document.getElementById("checkoutModal").classList.remove("show");
+}
+
+
+/* CUSTOMER VERIFICATION */
+function verifyCustomer(){
+
+    const fields = [
+        "businessName",
+        "ownerName",
+        "phone",
+        "email",
+        "businessType",
+        "city",
+        "address"
+    ];
+
+    let valid = true;
+
+    fields.forEach(id => {
+
+        const el = document.getElementById(id);
+
+        if(!el.value.trim()){
+            el.style.borderColor = "#dc3545";
+            valid = false;
+        }else{
+            el.style.borderColor = "#d6e1ef";
+        }
+
+    });
+
+    if(!valid){
+        alert("Please complete all business details.");
+        return;
+    }
+
+    document.getElementById("paymentPlanName").textContent = selectedPlan;
+
+    if(selectedPlan === "Monthly"){
+        document.getElementById("paymentPlanAmount").textContent =
+            "Rs. 0 — First Month FREE";
+    }else{
+        document.getElementById("paymentPlanAmount").textContent =
+            "Rs. " + Number(selectedAmount).toLocaleString();
+    }
+
+    document.getElementById("stepOne").classList.add("hidden");
+    document.getElementById("stepTwo").classList.remove("hidden");
+}
+
+
+/* SUBMIT PAYMENT */
+function submitPayment(){
+
+    const transactionId =
+        document.getElementById("transactionId").value.trim();
+
+    if(!transactionId){
+
+        alert("Please enter your Easypaisa Transaction ID after making the payment.");
+
+        return;
+    }
+
+    const clientId =
+        "SB-" +
+        Date.now().toString().slice(-8);
+
+    const today = new Date();
+
+    const client = {
+
+        clientId: clientId,
+
+        businessName:
+            document.getElementById("businessName").value.trim(),
+
+        ownerName:
+            document.getElementById("ownerName").value.trim(),
+
+        phone:
+            document.getElementById("phone").value.trim(),
+
+        email:
+            document.getElementById("email").value.trim(),
+
+        businessType:
+            document.getElementById("businessType").value,
+
+        city:
+            document.getElementById("city").value.trim(),
+
+        address:
+            document.getElementById("address").value.trim(),
+
+        plan: selectedPlan,
+
+        amount: selectedAmount,
+
+        billing: selectedBilling,
+
+        paymentMethod: "Easypaisa",
+
+        easypaisaNumber: "03452543524",
+
+        accountName: "Muhammad Shiraz Khan",
+
+        transactionId: transactionId,
+
+        status: "Pending Verification",
+
+        registeredAt: today.toISOString(),
+
+        subscriptionStart: null,
+
+        subscriptionEnd: null,
+
+        nextBillingDate: null
+
+    };
+
+
+    let clients =
+        JSON.parse(localStorage.getItem("sultanBahadurClients") || "[]");
+
+    clients.push(client);
+
+    localStorage.setItem(
+        "sultanBahadurClients",
+        JSON.stringify(clients)
+    );
+
+
+    document.getElementById("generatedClientId").textContent =
+        clientId;
+
+    document.getElementById("stepTwo").classList.add("hidden");
+
+    document.getElementById("stepThree").classList.remove("hidden");
+
+    refreshClients();
+}
+
+
+/* GET CLIENTS */
+function getClients(){
+
+    return JSON.parse(
+        localStorage.getItem("sultanBahadurClients") || "[]"
+    );
+}
+
+
+/* SAVE CLIENTS */
+function saveClients(clients){
+
+    localStorage.setItem(
+        "sultanBahadurClients",
+        JSON.stringify(clients)
+    );
+
+}
+
+
+/* ACTIVATE SUBSCRIPTION */
+function activateClient(clientId){
+
+    const clients = getClients();
+
+    const index =
+        clients.findIndex(c => c.clientId === clientId);
+
+    if(index === -1) return;
+
+    const client = clients[index];
+
+    const start = new Date();
+
+    let end = new Date(start);
+
+    if(client.plan === "Monthly"){
+
+        end.setMonth(end.getMonth() + 1);
+
+        client.nextBillingDate = end.toISOString();
+
+    }else if(client.plan === "6 Months"){
+
+        end.setMonth(end.getMonth() + 6);
+
+    }else if(client.plan === "12 Months"){
+
+        end.setMonth(end.getMonth() + 12);
+
+    }
+
+    client.subscriptionStart =
+        start.toISOString();
+
+    client.subscriptionEnd =
+        end.toISOString();
+
+    client.status = "Active";
+
+    saveClients(clients);
+
+    refreshClients();
+}
+
+
+/* DEACTIVATE */
+function deactivateClient(clientId){
+
+    const clients = getClients();
+
+    const index =
+        clients.findIndex(c => c.clientId === clientId);
+
+    if(index === -1) return;
+
+    clients[index].status = "Pending Verification";
+
+    clients[index].subscriptionStart = null;
+    clients[index].subscriptionEnd = null;
+    clients[index].nextBillingDate = null;
+
+    saveClients(clients);
+
+    refreshClients();
+}
+
+
+/* FORMAT DATE */
+function formatDate(date){
+
+    if(!date) return "—";
+
+    return new Date(date).toLocaleDateString(
+        "en-PK",
+        {
+            day:"2-digit",
+            month:"short",
+            year:"numeric"
+        }
+    );
+}
+
+
+/* REFRESH ADMIN CLIENT LIST */
+function refreshClients(){
+
+    const list =
+        document.getElementById("clientList");
+
+    const clients = getClients();
+
+    if(!clients.length){
+
+        list.innerHTML = `
+            <div class="notice" style="padding:25px">
+                No businesses registered yet.
+            </div>
+        `;
+
+        return;
+    }
+
+    list.innerHTML = "";
+
+    clients.slice().reverse().forEach(client => {
+
+        const item =
+            document.createElement("div");
+
+        item.className = "client";
+
+        const active =
+            client.status === "Active";
+
+        item.innerHTML = `
+
+            <div class="client-info">
+
+                <strong>
+                    ${escapeHTML(client.businessName)}
+                </strong>
+
+                <span>
+                    Client ID: ${escapeHTML(client.clientId)}
+                </span>
+
+                <span>
+                    Owner: ${escapeHTML(client.ownerName)}
+                </span>
+
+                <span>
+                    Plan: ${escapeHTML(client.plan)}
+                </span>
+
+                <span>
+                    Payment: Easypaisa |
+                    Transaction: ${escapeHTML(client.transactionId)}
+                </span>
+
+                <span>
+                    Subscription:
+                    ${active
+                        ? formatDate(client.subscriptionStart) +
+                          " → " +
+                          formatDate(client.subscriptionEnd)
+                        : "Not Activated"}
+                </span>
+
+            </div>
+
+            <div class="client-actions">
+
+                <span class="status-badge ${active ? "active" : ""}">
+                    ${escapeHTML(client.status)}
+                </span>
+
+                ${
+                    active
+                    ?
+                    `<button
+                        class="deactivate-btn"
+                        onclick="deactivateClient('${client.clientId}')">
+                        Deactivate
+                    </button>`
+                    :
+                    `<button
+                        class="activate-btn"
+                        onclick="activateClient('${client.clientId}')">
+                        Activate Subscription
+                    </button>`
+                }
+
+            </div>
+        `;
+
+        list.appendChild(item);
+
+    });
+
+}
+
+
+/* BASIC HTML ESCAPE */
+function escapeHTML(value){
+
+    return String(value)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+}
+
+
+/* CLOSE MODAL ON BACKDROP */
+document.getElementById("checkoutModal").addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === this){
+            closeCheckout();
+        }
+
+    }
+);
+
+
+/* INITIAL LOAD */
+refreshClients();
+
+</script>
+
+</body>
+</html>
