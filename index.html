@@ -5,1556 +5,902 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SULTAN BAHADUR TECH | Technology. Smarter Business.</title>
-
-<meta name="description" content="SULTAN BAHADUR TECH provides websites, mobile apps, POS, online ordering, digital menus, product catalogs and business technology solutions.">
+<meta name="description" content="SULTAN BAHADUR TECH provides digital solutions, business websites, digital menus, catalogs, POS systems, online ordering and business management solutions.">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-
 html{scroll-behavior:smooth}
-
 body{
-font-family:Inter,Arial,sans-serif;
-background:#f7f9fc;
-color:#122033;
-line-height:1.6
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7faff;
+    color:#10213d;
+    line-height:1.6
 }
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
 
-a{text-decoration:none}
+:root{
+    --blue:#1261d6;
+    --dark:#0b1d38;
+    --light:#eef5ff;
+    --border:#dce7f5;
+    --green:#159447;
+}
 
 .container{
-width:90%;
-max-width:1200px;
-margin:auto
+    width:min(1120px,92%);
+    margin:auto
 }
 
-header{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(255,255,255,.97);
-backdrop-filter:blur(12px);
-border-bottom:1px solid #e6ebf2
+/* NAVBAR */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border)
 }
-
-.nav{
-min-height:75px;
-display:flex;
-align-items:center;
-justify-content:space-between
+.nav-inner{
+    height:74px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between
 }
-
 .logo{
-display:flex;
-align-items:center;
-gap:10px;
-color:#10213b;
-font-weight:900
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+    color:var(--dark)
 }
-
 .logo-box{
-width:44px;
-height:44px;
-border-radius:11px;
-background:#075ff5;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:900
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#1261d6,#0a3e91);
+    color:white;
+    font-weight:900
 }
-
-.logo small{
-display:block;
-color:#075ff5;
-font-size:10px;
-letter-spacing:2px
+.logo span{
+    font-size:17px;
+    letter-spacing:.5px
 }
-
-nav{
-display:flex;
-gap:20px;
-align-items:center
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center
 }
-
-nav a{
-color:#566477;
-font-size:14px;
-font-weight:700
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    color:#40516d
 }
-
-nav a:hover{
-color:#075ff5
-}
-
+.nav-links a:hover{color:var(--blue)}
 .nav-btn{
-background:#075ff5;
-color:white!important;
-padding:10px 17px;
-border-radius:8px
+    background:var(--blue);
+    color:white!important;
+    padding:11px 17px;
+    border-radius:9px
 }
 
 /* HERO */
-
 .hero{
-padding:100px 0;
-background:
-radial-gradient(circle at 85% 20%,rgba(7,95,245,.13),transparent 30%),
-linear-gradient(135deg,#f8fbff,#fff)
+    padding:105px 0 95px;
+    background:
+    radial-gradient(circle at 80% 20%,#dceaff 0,transparent 35%),
+    linear-gradient(180deg,#fff,#f4f8ff)
 }
-
 .hero-grid{
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:60px;
-align-items:center
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center
 }
-
-.eyebrow{
-display:inline-block;
-background:#eaf2ff;
-color:#075ff5;
-padding:7px 13px;
-border-radius:30px;
-font-size:11px;
-font-weight:900;
-letter-spacing:1.4px;
-margin-bottom:18px
+.badge{
+    display:inline-block;
+    padding:7px 13px;
+    border:1px solid #cfe0fa;
+    background:#edf5ff;
+    color:var(--blue);
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:20px
 }
-
-h1{
-font-size:clamp(45px,6vw,72px);
-line-height:1.03;
-letter-spacing:-2px;
-margin-bottom:22px;
-color:#10213b
+.hero h1{
+    font-size:clamp(42px,6vw,70px);
+    line-height:1.04;
+    letter-spacing:-2.5px;
+    color:var(--dark);
+    margin-bottom:22px
 }
-
-h1 span{
-color:#075ff5
-}
-
+.hero h1 span{color:var(--blue)}
 .hero p{
-font-size:18px;
-color:#69768a;
-max-width:650px
+    max-width:650px;
+    color:#5d6c82;
+    font-size:18px;
+    margin-bottom:30px
 }
-
-.buttons{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-top:30px
+.hero-buttons{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap
 }
-
-.btn{
-display:inline-block;
-padding:14px 21px;
-border-radius:9px;
-font-size:14px;
-font-weight:800;
-border:1px solid transparent;
-cursor:pointer
+.primary-btn,.secondary-btn{
+    border:0;
+    cursor:pointer;
+    padding:14px 21px;
+    border-radius:10px;
+    font-weight:700;
+    transition:.2s
 }
-
-.primary{
-background:#075ff5;
-color:white
+.primary-btn{
+    background:var(--blue);
+    color:white;
+    box-shadow:0 8px 22px rgba(18,97,214,.2)
 }
-
-.primary:hover{
-background:#034dcc
+.primary-btn:hover{transform:translateY(-2px)}
+.secondary-btn{
+    background:white;
+    color:var(--dark);
+    border:1px solid var(--border)
 }
-
-.outline{
-background:white;
-border-color:#d4dce7;
-color:#18304f
-}
-
-.outline:hover{
-border-color:#075ff5;
-color:#075ff5
-}
-
-/* HERO CARD */
-
 .hero-card{
-background:white;
-border:1px solid #e1e7ef;
-border-radius:20px;
-padding:28px;
-box-shadow:0 20px 50px rgba(20,50,90,.1)
+    background:white;
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:28px;
+    box-shadow:0 25px 70px rgba(18,61,120,.12)
 }
-
-.card-head{
-display:flex;
-justify-content:space-between;
-margin-bottom:20px
+.hero-card-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:25px
 }
-
-.live{
-background:#eaf8f0;
-color:#16834d;
-padding:5px 10px;
-border-radius:20px;
-font-size:11px;
-font-weight:900
+.status{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:var(--green);
+    font-size:13px;
+    font-weight:700
 }
-
-.business{
-background:#f7f9fc;
-padding:15px;
-border-radius:11px;
-margin:10px 0;
-display:flex;
-justify-content:space-between;
-align-items:center
+.status-dot{
+    width:8px;
+    height:8px;
+    background:#1bb75a;
+    border-radius:50%
 }
-
-.business small{
-display:block;
-color:#7a8798
+.dashboard-preview{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:13px
 }
-
-.id{
-background:#eaf2ff;
-color:#075ff5;
-padding:5px 8px;
-border-radius:15px;
-font-size:10px;
-font-weight:900
+.preview-box{
+    padding:20px;
+    background:#f5f8fd;
+    border:1px solid #e8eef7;
+    border-radius:15px
 }
-
-/* STRIP */
-
-.strip{
-background:#10213b;
-color:white;
-padding:22px 0
+.preview-box strong{
+    display:block;
+    font-size:23px;
+    margin-bottom:4px
 }
+.preview-box small{color:#6c7b91}
 
-.types{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-text-align:center;
-gap:10px
-}
-
-.types div{
-font-weight:700;
-padding:8px
-}
-
-/* GENERAL */
-
-section{
-padding:85px 0
-}
-
+/* SECTIONS */
+section{padding:85px 0}
 .section-head{
-max-width:700px;
-margin:0 auto 45px;
-text-align:center
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 45px
 }
-
-.label{
-font-size:12px;
-font-weight:900;
-letter-spacing:1.5px;
-color:#075ff5
+.section-head .eyebrow{
+    color:var(--blue);
+    font-weight:800;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1.5px
 }
-
 .section-head h2{
-font-size:39px;
-line-height:1.15;
-margin:8px 0 12px;
-color:#10213b
+    color:var(--dark);
+    font-size:38px;
+    margin:9px 0 12px
 }
+.section-head p{color:#66758c}
 
-.section-head p{
-color:#69768a
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px
 }
-
-/* ABOUT */
-
-.about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center
+.card{
+    background:white;
+    border:1px solid var(--border);
+    padding:28px;
+    border-radius:18px;
+    transition:.2s
 }
-
-.about-text p{
-font-size:17px;
-color:#657286
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 40px rgba(24,64,110,.09)
 }
-
-.about-box{
-background:white;
-border:1px solid #e2e8f0;
-padding:30px;
-border-radius:18px
-}
-
-.point{
-display:flex;
-gap:12px;
-margin:18px 0
-}
-
-.check{
-width:29px;
-height:29px;
-border-radius:50%;
-background:#eaf2ff;
-color:#075ff5;
-display:flex;
-align-items:center;
-justify-content:center;
-font-weight:900;
-flex-shrink:0
-}
-
-.point strong{
-display:block
-}
-
-.point span{
-display:block;
-color:#69768a;
-font-size:14px
-}
-
-/* SERVICES */
-
-.services{
-background:white
-}
-
-.service-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
-}
-
-.service{
-background:#fff;
-border:1px solid #e1e7ef;
-border-radius:15px;
-padding:27px;
-transition:.25s
-}
-
-.service:hover{
-transform:translateY(-5px);
-box-shadow:0 15px 35px rgba(20,50,90,.08)
-}
-
 .icon{
-font-size:28px;
-margin-bottom:12px
+    width:48px;
+    height:48px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    background:#edf5ff;
+    color:var(--blue);
+    font-size:21px;
+    margin-bottom:18px
 }
-
-.service h3{
-font-size:18px;
-margin-bottom:7px
-}
-
-.service p{
-font-size:14px;
-color:#69768a
-}
+.card h3{margin-bottom:8px;color:var(--dark)}
+.card p{color:#6a788d;font-size:14px}
 
 /* STEPS */
-
 .steps{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px
 }
-
 .step{
-background:white;
-border:1px solid #e1e7ef;
-border-radius:15px;
-padding:26px
+    text-align:center;
+    padding:25px 15px
 }
-
-.number{
-color:#075ff5;
-font-weight:900;
-font-size:13px;
-margin-bottom:12px
+.step-number{
+    width:45px;
+    height:45px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:var(--blue);
+    color:#fff;
+    font-weight:800
 }
-
-.step p{
-font-size:14px;
-color:#69768a
-}
+.step h3{font-size:17px;margin-bottom:6px}
+.step p{font-size:13px;color:#718097}
 
 /* PRICING */
-
 .pricing{
-background:#f0f4f9
+    background:#f0f6ff
 }
-
-.prices{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px
 }
-
 .price-card{
-background:white;
-border:1px solid #dde5ef;
-border-radius:18px;
-padding:32px;
-position:relative
+    position:relative;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px
 }
-
 .price-card.featured{
-border:2px solid #075ff5;
-transform:translateY(-7px)
+    border:2px solid var(--blue);
+    box-shadow:0 18px 45px rgba(18,97,214,.12)
 }
-
 .popular{
-position:absolute;
-top:-14px;
-left:50%;
-transform:translateX(-50%);
-background:#075ff5;
-color:white;
-padding:5px 15px;
-border-radius:20px;
-font-size:10px;
-font-weight:900
+    position:absolute;
+    right:18px;
+    top:18px;
+    background:var(--blue);
+    color:#fff;
+    padding:5px 9px;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:800
 }
-
+.price-card h3{font-size:21px}
 .price{
-font-size:38px;
-font-weight:900;
-color:#075ff5;
-margin:12px 0 0
+    font-size:37px;
+    font-weight:900;
+    margin:12px 0 4px;
+    color:var(--dark)
 }
-
-.period{
-color:#7b8798;
-font-size:13px
+.price small{
+    font-size:13px;
+    color:#728097;
+    font-weight:500
 }
-
-.free{
-display:inline-block;
-margin-top:8px;
-background:#eaf8f0;
-color:#16834d;
-padding:5px 10px;
-border-radius:20px;
-font-size:11px;
-font-weight:900
+.price-note{
+    color:var(--green);
+    font-weight:700;
+    font-size:13px;
+    min-height:25px;
+    margin-bottom:15px
 }
-
 .price-card ul{
-list-style:none;
-margin:22px 0
+    list-style:none;
+    margin:18px 0 24px
 }
-
 .price-card li{
-padding:7px 0;
-font-size:14px;
-color:#637084
+    padding:7px 0;
+    font-size:14px;
+    color:#5e6d82
+}
+.price-card li::before{
+    content:"✓";
+    color:var(--green);
+    font-weight:900;
+    margin-right:8px
+}
+.plan-btn{
+    width:100%;
+    border:0;
+    cursor:pointer;
+    padding:13px;
+    border-radius:9px;
+    background:var(--blue);
+    color:white;
+    font-weight:800
 }
 
-.price-card li:before{
-content:"✓";
-color:#075ff5;
-font-weight:900;
-margin-right:8px
+/* ADMIN */
+.admin-section{
+    background:#fff
 }
-
-/* DASHBOARD */
-
-.dashboard{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:22px
+.admin-box{
+    background:#f6f9fe;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:28px
 }
-
-.login{
-background:white;
-border:1px solid #e0e6ee;
-border-radius:16px;
-padding:30px
+.admin-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px
 }
-
-.login p{
-color:#69768a;
-font-size:14px;
-margin:10px 0 20px
+.admin-title h3{font-size:23px}
+.admin-note{
+    color:#697890;
+    font-size:13px
 }
-
-/* PAYMENT CTA */
-
-.payment-section{
-background:#f0f4f9;
-padding-top:20px
+.client-list{
+    display:grid;
+    gap:12px
 }
-
-.payment-box{
-background:#10213b;
-border-radius:22px;
-padding:48px;
-color:white;
-text-align:center
+.client{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:13px;
+    padding:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px
 }
-
-.payment-box h2{
-font-size:40px;
-margin:8px 0 12px
+.client-info strong{
+    display:block;
+    color:var(--dark)
 }
-
-.payment-box p{
-color:#d5deeb
+.client-info span{
+    display:block;
+    color:#718097;
+    font-size:13px
 }
+.client-actions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap
+}
+.status-badge{
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:800;
+    background:#fff3cd;
+    color:#876500
+}
+.status-badge.active{
+    background:#e5f8ec;
+    color:#168442
+}
+.activate-btn,.deactivate-btn{
+    border:0;
+    cursor:pointer;
+    padding:8px 12px;
+    border-radius:7px;
+    color:#fff;
+    font-size:12px;
+    font-weight:700
+}
+.activate-btn{background:var(--green)}
+.deactivate-btn{background:#dc3545}
 
 /* CONTACT */
-
-.contact{
-background:#10213b;
-color:white;
-text-align:center
+.contact-box{
+    background:var(--dark);
+    color:white;
+    border-radius:25px;
+    padding:50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px
 }
-
-.contact h2{
-font-size:40px;
-margin-bottom:10px
+.contact-box p{color:#aebbd0;margin-top:7px}
+.contact-actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap
 }
-
-.contact p{
-color:#d5deeb
+.contact-actions a{
+    padding:13px 18px;
+    border-radius:9px;
+    background:white;
+    color:var(--dark);
+    font-weight:800
 }
-
-.contact-info{
-margin-top:25px;
-color:#d5deeb
-}
-
-.contact-info a{
-color:white;
-font-weight:800
+.contact-actions a.blue{
+    background:var(--blue);
+    color:white
 }
 
 /* FOOTER */
-
 footer{
-background:#071426;
-color:#aeb9c9;
-padding:28px;
-text-align:center;
-font-size:13px
+    background:#07162b;
+    color:#9eacc0;
+    padding:30px 0
 }
-
-footer strong{
-display:block;
-color:white;
-margin-bottom:5px
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap
 }
+.footer-inner strong{color:white}
 
-/* PAYMENT MODAL */
-
+/* MODAL */
 .modal{
-display:none;
-position:fixed;
-z-index:99999;
-inset:0;
-background:rgba(4,16,35,.78);
-padding:20px;
-overflow-y:auto
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    background:rgba(3,16,34,.65);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px
 }
-
-.modal-content{
-position:relative;
-max-width:650px;
-margin:30px auto;
-background:white;
-border-radius:20px;
-padding:35px;
-color:#122033;
-box-shadow:0 25px 80px rgba(0,0,0,.3)
+.modal.show{display:flex}
+.modal-box{
+    width:min(570px,100%);
+    max-height:92vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:22px;
+    padding:30px;
+    position:relative;
+    box-shadow:0 30px 100px rgba(0,0,0,.25)
 }
-
 .close{
-position:absolute;
-right:18px;
-top:15px;
-width:38px;
-height:38px;
-border:0;
-border-radius:50%;
-background:#eef2f7;
-font-size:25px;
-cursor:pointer
+    position:absolute;
+    right:17px;
+    top:15px;
+    border:0;
+    background:#edf2f8;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:20px
 }
-
-.close:hover{
-background:#e1e7ef
+.modal h2{
+    color:var(--dark);
+    margin-bottom:5px
 }
-
-.modal-content h2{
-font-size:30px;
-margin:8px 0 15px
+.modal-sub{
+    color:#718097;
+    font-size:13px;
+    margin-bottom:22px
 }
-
-.order-summary{
-background:#eaf2ff;
-border:1px solid #dce9ff;
-border-radius:12px;
-padding:18px;
-margin-bottom:22px
+.selected-plan{
+    background:#edf5ff;
+    border:1px solid #d4e5fc;
+    border-radius:12px;
+    padding:15px;
+    margin-bottom:20px
 }
-
-.order-summary strong{
-display:block;
-font-size:30px;
-color:#075ff5
+.selected-plan strong{
+    display:block;
+    color:var(--blue);
+    font-size:17px
 }
-
-.order-summary span{
-display:block;
-color:#637084;
-font-size:13px
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:13px
 }
-
-.checkout-form{
-display:grid;
-gap:12px
+.form-group{
+    margin-bottom:13px
 }
-
-.checkout-form input,
-.checkout-form select{
-width:100%;
-padding:13px;
-border:1px solid #d8e0ea;
-border-radius:8px;
-font-size:14px;
-outline:none
+.form-group.full{grid-column:1/-1}
+.form-group label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    color:#43536b;
+    margin-bottom:5px
 }
-
-.checkout-form input:focus,
-.checkout-form select:focus{
-border-color:#075ff5
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:12px;
+    border:1px solid #d6e1ef;
+    border-radius:9px;
+    outline:none;
+    background:white
 }
-
-.payment-title{
-font-size:17px;
-font-weight:900;
-margin-top:10px
+.form-group input:focus,
+.form-group select:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(18,97,214,.08)
 }
-
-.payment-methods{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px
+.verify-btn{
+    width:100%;
+    border:0;
+    padding:14px;
+    border-radius:9px;
+    cursor:pointer;
+    background:var(--blue);
+    color:white;
+    font-weight:800;
+    margin-top:6px
 }
-
-.method{
-display:flex;
-align-items:center;
-gap:10px;
-border:1px solid #d8e0ea;
-border-radius:10px;
-padding:16px;
-cursor:pointer;
-transition:.2s
-}
-
-.method:hover{
-border-color:#075ff5
-}
-
-.method:has(input:checked){
-border-color:#075ff5;
-background:#f2f7ff
-}
-
-.method input{
-width:auto!important
-}
-
-.method strong{
-display:block
-}
-
-.method small{
-display:block;
-color:#758196;
-font-size:12px
-}
-
-.payment-fields{
-display:none;
-background:#f7f9fc;
-padding:15px;
-border-radius:10px
-}
-
-.payment-fields input{
-margin-bottom:10px
-}
-
-.card-row{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px
-}
-
-.payment-note{
-font-size:12px;
-color:#687386;
-margin-top:4px
-}
-
-.secure-note{
-display:flex;
-gap:8px;
-align-items:center;
-background:#f0f8f4;
-color:#21704a;
-padding:11px;
-border-radius:8px;
-font-size:12px;
-margin-top:5px
-}
-
-.pay-button{
-border:0;
-background:#075ff5;
-color:white;
-padding:15px;
-border-radius:9px;
-font-weight:900;
-cursor:pointer;
-font-size:15px;
-margin-top:5px
-}
-
-.pay-button:hover{
-background:#034dcc
-}
-
-.payment-message{
-display:none;
-margin-top:18px;
-padding:14px;
-border-radius:9px;
-background:#fff3cd;
-color:#765600;
-font-size:14px
-}
-
-.success-box{
-display:none;
-text-align:center
-}
-
-.success-icon{
-width:65px;
-height:65px;
-border-radius:50%;
-background:#eaf8f0;
-color:#16834d;
-font-size:35px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin:0 auto 15px
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.hero-grid,
-.about{
-grid-template-columns:1fr
-}
-
-.service-grid{
-grid-template-columns:repeat(2,1fr)
-}
-
-.steps{
-grid-template-columns:repeat(2,1fr)
-}
-
-.prices{
-grid-template-columns:1fr
-}
-
-.price-card.featured{
-transform:none
-}
-
-.types{
-grid-template-columns:repeat(3,1fr)
-}
-
-}
-
-@media(max-width:650px){
-
-nav{
-display:none
-}
-
-.hero{
-padding:70px 0
-}
-
-section{
-padding:65px 0
-}
-
-.service-grid,
-.steps,
-.dashboard{
-grid-template-columns:1fr
-}
-
-.types{
-grid-template-columns:1fr 1fr
-}
-
-.payment-methods{
-grid-template-columns:1fr
-}
-
-.card-row{
-grid-template-columns:1fr
-}
-
-.modal-content{
-padding:25px 18px
-}
-
 .payment-box{
-padding:32px 20px
+    background:#f7faff;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+    margin-top:18px
 }
-
-.section-head h2{
-font-size:31px
+.payment-method{
+    border:2px solid var(--blue);
+    border-radius:14px;
+    padding:17px;
+    background:white
 }
-
-.contact h2,
-.payment-box h2{
-font-size:31px
+.ep-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:13px
 }
-
+.ep-logo{
+    width:38px;
+    height:38px;
+    border-radius:9px;
+    display:grid;
+    place-items:center;
+    background:#0b9e4b;
+    color:#fff;
+    font-weight:900;
+    font-size:11px
 }
+.ep-number{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:.5px;
+    color:var(--dark);
+    margin:10px 0
+}
+.payment-instructions{
+    background:#eef9f2;
+    border:1px solid #ccebd7;
+    border-radius:10px;
+    padding:13px;
+    font-size:13px;
+    color:#3e5d49
+}
+.payment-instructions ol{
+    padding-left:19px;
+    margin-top:6px
+}
+.transaction{
+    margin-top:15px
+}
+.transaction label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:5px
+}
+.transaction input{
+    width:100%;
+    border:1px solid #d6e1ef;
+    border-radius:9px;
+    padding:12px
+}
+.submit-payment{
+    width:100%;
+    border:0;
+    background:var(--green);
+    color:#fff;
+    border-radius:9px;
+    padding:14px;
+    font-weight:800;
+    cursor:pointer;
+    margin-top:12px
+}
+.notice{
+    font-size:12px;
+    color:#758399;
+    margin-top:10px;
+    text-align:center
+}
+.success{
+    text-align:center;
+    padding:20px 0
+}
+.success-icon{
+    width:65px;
+    height:65px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#e5f8ec;
+    color:var(--green);
+    font-size:30px;
+    font-weight:900
+}
+.client-id{
+    background:#f2f6fc;
+    border:1px dashed #bfd0e6;
+    border-radius:10px;
+    padding:12px;
+    margin:17px 0;
+    font-weight:800
+}
+.hidden{display:none!important}
 
+/* RESPONSIVE */
+@media(max-width:850px){
+    .nav-links{display:none}
+    .hero-grid{grid-template-columns:1fr}
+    .cards,.pricing-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .contact-box{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:560px){
+    .hero{padding:75px 0}
+    section{padding:65px 0}
+    .hero h1{font-size:43px}
+    .form-grid{grid-template-columns:1fr}
+    .form-group.full{grid-column:auto}
+    .steps{grid-template-columns:1fr}
+    .modal-box{padding:23px}
+    .client{align-items:flex-start;flex-direction:column}
+}
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="container nav">
+<header class="navbar">
+    <div class="container nav-inner">
+        <a href="#home" class="logo">
+            <div class="logo-box">SB</div>
+            <span>SULTAN BAHADUR TECH</span>
+        </a>
 
-<a href="#home" class="logo">
-<div class="logo-box">SB</div>
-<div>
-SULTAN BAHADUR
-<small>TECH</small>
-</div>
-</a>
-
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#how">How It Works</a>
-<a href="#pricing">Subscriptions</a>
-<a href="#dashboard">My Dashboard</a>
-<a href="#contact">Contact</a>
-</nav>
-
-</div>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#how">How It Works</a>
+            <a href="#pricing">Plans</a>
+            <a href="#admin">My Dashboard</a>
+            <a href="#contact" class="nav-btn">Contact</a>
+        </nav>
+    </div>
 </header>
 
-
-<!-- HERO -->
+<main>
 
 <section class="hero" id="home">
+    <div class="container hero-grid">
 
-<div class="container hero-grid">
+        <div>
+            <span class="badge">TECHNOLOGY & DIGITAL SOLUTIONS</span>
 
-<div>
+            <h1>
+                Technology.<br>
+                <span>Smarter Business.</span>
+            </h1>
 
-<div class="eyebrow">
-TECHNOLOGY & DIGITAL SOLUTIONS
-</div>
+            <p>
+                Websites, digital menus, catalogs, POS, online ordering
+                and business management solutions — built to help your
+                business work smarter.
+            </p>
 
-<h1>
-Technology.<br>
-<span>Smarter Business.</span>
-</h1>
+            <div class="hero-buttons">
+                <a href="#pricing" class="primary-btn">Get Started</a>
+                <a href="#services" class="secondary-btn">Our Services</a>
+            </div>
+        </div>
 
-<p>
-Websites, apps, POS, online ordering and management systems —
-register your business and get your own digital menu or catalog,
-ready for customers.
-</p>
+        <div class="hero-card">
+            <div class="hero-card-top">
+                <strong>SULTAN BAHADUR TECH</strong>
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+            </div>
 
-<div class="buttons">
+            <div class="dashboard-preview">
+                <div class="preview-box">
+                    <strong>24/7</strong>
+                    <small>Digital Access</small>
+                </div>
+                <div class="preview-box">
+                    <strong>POS</strong>
+                    <small>Business Management</small>
+                </div>
+                <div class="preview-box">
+                    <strong>Menu</strong>
+                    <small>Digital Catalog</small>
+                </div>
+                <div class="preview-box">
+                    <strong>Orders</strong>
+                    <small>Online Ordering</small>
+                </div>
+            </div>
+        </div>
 
-<a href="#pricing" class="btn primary">
-Get Started
-</a>
-
-<a href="#services" class="btn outline">
-Our Services
-</a>
-
-</div>
-
-</div>
-
-
-<div class="hero-card">
-
-<div class="card-head">
-<strong>Business Platform</strong>
-<span class="live">● LIVE</span>
-</div>
-
-<div class="business">
-
-<div>
-<strong>Pizza Palace</strong>
-<small>Restaurant</small>
-</div>
-
-<span class="id">SBT-K7M2QX</span>
-
-</div>
-
-<div class="business">
-
-<div>
-<strong>Royal Biryani</strong>
-<small>Restaurant</small>
-</div>
-
-<span class="id">SBT-P4N8TZ</span>
-
-</div>
-
-<div class="business">
-
-<div>
-<strong>City Mart</strong>
-<small>Retail Store</small>
-</div>
-
-<span class="id">SBT-W3D9HB</span>
-
-</div>
-
-<p style="color:#687386;font-size:13px;margin-top:18px">
-✓ Private owner dashboards &nbsp;
-✓ Live menus &nbsp;
-✓ Custom catalogs
-</p>
-
-</div>
-
-</div>
-
+    </div>
 </section>
-
-
-<!-- BUSINESS TYPES -->
-
-<div class="strip">
-
-<div class="container types">
-
-<div>Restaurants</div>
-<div>Cafes</div>
-<div>Bakeries</div>
-<div>Retail Stores</div>
-<div>Shopping Malls</div>
-
-</div>
-
-</div>
-
-
-<!-- ABOUT -->
 
 <section id="about">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">About Us</div>
+            <h2>Digital solutions for modern businesses.</h2>
+            <p>
+                SULTAN BAHADUR TECH helps restaurants, cafes, bakeries,
+                retail stores and other businesses move their operations
+                into a smarter digital environment.
+            </p>
+        </div>
 
-<div class="container about">
+        <div class="cards">
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Fast Solutions</h3>
+                <p>Simple digital systems designed for practical business use.</p>
+            </div>
 
-<div class="about-text">
+            <div class="card">
+                <div class="icon">◈</div>
+                <h3>Professional Presence</h3>
+                <p>Build a professional digital identity for your business.</p>
+            </div>
 
-<div class="label">
-ABOUT US
-</div>
-
-<h2 style="font-size:39px;line-height:1.15;margin:9px 0 15px">
-Technology built for modern businesses
-</h2>
-
-<p>
-<strong>SULTAN BAHADUR TECH</strong> is a technology and digital
-solutions company. We design and deliver websites, mobile apps,
-business management systems, POS solutions, online ordering,
-digital menus and product catalogs that help businesses sell more
-and operate smarter.
-</p>
-
-</div>
-
-
-<div class="about-box">
-
-<div class="point">
-
-<div class="check">✓</div>
-
-<div>
-<strong>Built for businesses</strong>
-
-<span>
-From a single restaurant to a shopping mall,
-our systems adapt to how your business works.
-</span>
-
-</div>
-
-</div>
-
-
-<div class="point">
-
-<div class="check">✓</div>
-
-<div>
-<strong>Your own digital presence</strong>
-
-<span>
-Every business gets its own branded digital menu,
-catalog or storefront.
-</span>
-
-</div>
-
-</div>
-
-
-<div class="point">
-
-<div class="check">✓</div>
-
-<div>
-<strong>Business control</strong>
-
-<span>
-Owners manage their own products, categories,
-prices, stock and orders.
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+            <div class="card">
+                <div class="icon">✓</div>
+                <h3>Business Control</h3>
+                <p>Manage products, orders, menus and business information from one place.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
+<section id="services">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Our Services</div>
+            <h2>Everything your business needs.</h2>
+            <p>Choose the digital solution that fits your business.</p>
+        </div>
 
-<!-- SERVICES -->
+        <div class="cards">
+            <div class="card">
+                <div class="icon">🍽</div>
+                <h3>Restaurants</h3>
+                <p>Digital menus, ordering systems, product management and business tools.</p>
+            </div>
 
-<section class="services" id="services">
+            <div class="card">
+                <div class="icon">☕</div>
+                <h3>Cafes & Bakeries</h3>
+                <p>Present products professionally and manage your digital catalog.</p>
+            </div>
 
-<div class="container">
+            <div class="card">
+                <div class="icon">🛍</div>
+                <h3>Retail Stores</h3>
+                <p>Organize products and create a digital storefront for customers.</p>
+            </div>
 
-<div class="section-head">
+            <div class="card">
+                <div class="icon">🏢</div>
+                <h3>Shopping Malls</h3>
+                <p>Digital business solutions for stores and commercial spaces.</p>
+            </div>
 
-<div class="label">
-SERVICES
-</div>
+            <div class="card">
+                <div class="icon">📦</div>
+                <h3>Online Catalogs</h3>
+                <p>Show products, prices and information in an easy digital format.</p>
+            </div>
 
-<h2>
-Everything your business needs to go digital
-</h2>
-
-<p>
-Professional technology solutions for businesses of every type.
-</p>
-
-</div>
-
-
-<div class="service-grid">
-
-<div class="service">
-<div class="icon">🌐</div>
-<h3>Website Development</h3>
-<p>Fast, modern websites that turn visitors into customers.</p>
-</div>
-
-<div class="service">
-<div class="icon">📱</div>
-<h3>Mobile App Development</h3>
-<p>iOS and Android apps built around your business.</p>
-</div>
-
-<div class="service">
-<div class="icon">📊</div>
-<h3>Business Management Systems</h3>
-<p>Manage staff, sales, branches and reports in one place.</p>
-</div>
-
-<div class="service">
-<div class="icon">💳</div>
-<h3>POS Solutions</h3>
-<p>Billing and checkout systems for counters and branches.</p>
-</div>
-
-<div class="service">
-<div class="icon">🛒</div>
-<h3>Online Ordering</h3>
-<p>Let customers order directly from your storefront.</p>
-</div>
-
-<div class="service">
-<div class="icon">🍽️</div>
-<h3>Digital Menu</h3>
-<p>Menus with categories, sizes, add-ons, prices and images.</p>
-</div>
-
-<div class="service">
-<div class="icon">📦</div>
-<h3>Product Catalog</h3>
-<p>Catalogs with variants, images and stock management.</p>
-</div>
-
-<div class="service">
-<div class="icon">🧩</div>
-<h3>Custom Software</h3>
-<p>Software engineered around your exact workflow.</p>
-</div>
-
-<div class="service">
-<div class="icon">⚙️</div>
-<h3>Business Automation</h3>
-<p>Remove repetitive work with smart automation.</p>
-</div>
-
-<div class="service">
-<div class="icon">📣</div>
-<h3>Digital Marketing</h3>
-<p>Grow your reach with data-driven online campaigns.</p>
-</div>
-
-<div class="service">
-<div class="icon">💡</div>
-<h3>Technology Consulting</h3>
-<p>Clear and practical technology guidance.</p>
-</div>
-
-</div>
-
-</div>
-
+            <div class="card">
+                <div class="icon">📊</div>
+                <h3>Management Systems</h3>
+                <p>Keep important business information organized in one platform.</p>
+            </div>
+        </div>
+    </div>
 </section>
-
-
-<!-- HOW IT WORKS -->
 
 <section id="how">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">How It Works</div>
+            <h2>Start your digital business journey.</h2>
+        </div>
 
-<div class="container">
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Choose a Plan</h3>
+                <p>Select the subscription that suits your business.</p>
+            </div>
 
-<div class="section-head">
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Register Business</h3>
+                <p>Enter your business and contact information.</p>
+            </div>
 
-<div class="label">
-HOW IT WORKS
-</div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Pay via Easypaisa</h3>
+                <p>Send the selected plan amount to our Easypaisa account.</p>
+            </div>
 
-<h2>
-Live in four simple steps
-</h2>
-
-</div>
-
-
-<div class="steps">
-
-<div class="step">
-
-<div class="number">01</div>
-
-<h3>Choose Your Plan</h3>
-
-<p>
-Select Monthly, 6 Months or 12 Months.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="number">02</div>
-
-<h3>Enter Business Details</h3>
-
-<p>
-Provide your business and contact information.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="number">03</div>
-
-<h3>Make Payment</h3>
-
-<p>
-Choose Easypaisa or Credit / Debit Card.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="number">04</div>
-
-<h3>Get Your Dashboard</h3>
-
-<p>
-After verified payment, your business account and Client ID are activated.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Get Activated</h3>
+                <p>After payment verification, your subscription is activated.</p>
+            </div>
+        </div>
+    </div>
 </section>
-
-
-<!-- PRICING -->
 
 <section class="pricing" id="pricing">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="label">
-SUBSCRIPTIONS
-</div>
-
-<h2>
-Simple plans for your business
-</h2>
-
-<p>
-Choose the subscription period that works best for your business.
-</p>
-
-</div>
-
-
-<div class="prices">
-
-
-<!-- MONTHLY -->
-
-<div class="price-card">
-
-<h3>Monthly</h3>
-
-<div class="price">
-Rs. 0
-</div>
-
-<div class="period">
-First month
-</div>
-
-<div class="free">
-FIRST MONTH FREE
-</div>
-
-<ul>
-
-<li>First month Rs. 0</li>
-<li>Then Rs. 10,000/month</li>
-<li>Digital business presence</li>
-<li>Digital menu or catalog</li>
-<li>Business dashboard</li>
-<li>Product management</li>
-<li>Category management</li>
-<li>Online ordering capability</li>
-<li>Business support</li>
-
-</ul>
-
-<button
-class="btn primary"
-onclick="openPayment('Monthly','Rs. 0','First Month FREE — then Rs. 10,000/month')">
-Choose Monthly
-</button>
-
-</div>
-
-
-<!-- SIX MONTHS -->
-
-<div class="price-card featured">
-
-<div class="popular">
-POPULAR
-</div>
-
-<h3>6 Months</h3>
-
-<div class="price">
-Rs. 35,000
-</div>
-
-<div class="period">
-6-month subscription
-</div>
-
-<ul>
-
-<li>Digital business presence</li>
-<li>Digital menu or catalog</li>
-<li>Business dashboard</li>
-<li>Product management</li>
-<li>Category management</li>
-<li>Online ordering capability</li>
-<li>Business support</li>
-
-</ul>
-
-<button
-class="btn primary"
-onclick="openPayment('6 Months','Rs. 35,000','6 Month Subscription')">
-Choose 6 Months
-</button>
-
-</div>
-
-
-<!-- TWELVE MONTHS -->
-
-<div class="price-card">
-
-<h3>12 Months</h3>
-
-<div class="price">
-Rs. 65,000
-</div>
-
-<div class="period">
-12-month subscription
-</div>
-
-<ul>
-
-<li>Digital business presence</li>
-<li>Digital menu or catalog</li>
-<li>Business dashboard</li>
-<li>Product management</li>
-<li>Category management</li>
-<li>Online ordering capability</li>
-<li>Business support</li>
-
-</ul>
-
-<button
-class="btn primary"
-onclick="openPayment('12 Months','Rs. 65,000','12 Month Subscription')">
-Choose 12 Months
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PAYMENT CTA -->
-
-<section class="payment-section">
-
-<div class="container">
-
-<div class="payment-box">
-
-<div class="label" style="color:#72a8ff">
-GET STARTED
-</div>
-
-<h2>
-Ready to Take Your Business Digital?
-</h2>
-
-<p>
-Choose a subscription plan and continue to secure checkout.
-</p>
-
-<div class="buttons" style="justify-content:center">
-
-<button
-class="btn primary"
-onclick="openPayment('Monthly','Rs. 0','First Month FREE — then Rs. 10,000/month')">
-Start Free Month
-</button>
-
-<a
-href="#contact"
-class="btn outline">
-Contact Us
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DASHBOARD -->
-
-<section id="dashboard">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="label">
-BUSINESS / CLIENT LOGIN
-</div>
-
-<h2>
-Access Your Dashboard
-</h2>
-
-</div>
-
-
-<div class="dashboard">
-
-<div class="login">
-
-<h3>
-Business Owners
-</h3>
-
-<p>
-Manage categories, products, prices, stock and orders for your business.
-</p>
-
-<a
-href="https://sultan-tech-flow.base44.app"
-class="btn primary">
-Go to My Dashboard
-</a>
-
-</div>
-
-
-<div class="login">
-
-<h3>
-Platform Admin
-</h3>
-
-<p>
-Authorized SULTAN BAHADUR TECH staff can manage businesses,
-catalogs, users and contact requests.
-</p>
-
-<a
-href="https://sultan-tech-flow.base44.app"
-class="btn outline">
-Admin Console
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-<div class="container">
-
-<h2>
-Let's Talk About Your Business
-</h2>
-
-<p>
-Send us a message and our team will get back to you.
-</p>
-
-
-<div class="buttons" style="justify-content:center">
-
-<a
-href="tel:0316261250"
-class="btn primary">
-Call Us
-</a>
-
-<a
-href="https://wa.me/92316261250"
-target="_blank"
-class="btn outline">
-WhatsApp
-</a>
-
-<a
-href="mailto:awan27.2009@gmail.com"
-class="btn outline">
-Email Us
-</a>
-
-</div>
-
-
-<div class="contact-info">
-
-📞
-<a href="tel:0316261250">
-0316261250
-</a>
-
-<br><br>
-
-✉️
-<a href="mai
+    <div class="container">
+
+        <div class="section-head">
+            <div class="eyebrow">Subscription Plans</div>
+            <h2>Choose your business plan.</h2>
+            <p>Simple plans for getting your business online.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+            <div class="price-card">
+                <h3>Monthly</h3>
+                <div class="price">Rs. 0 <small>first month</small></div>
+                <div class="price-note">First Month FREE</div>
+
+                <ul>
+                    <li>First month Rs. 0</li>
+                    <li>Then Rs. 10,000/month</li>
+                    <li>Digital business setup</li>
+                    <li>Business dashboard</li>
+                    <li>Digital menu/catalog</li>
+               
